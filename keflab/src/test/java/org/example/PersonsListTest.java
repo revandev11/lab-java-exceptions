@@ -30,6 +30,12 @@ class PersonsListTest {
     assertEquals(person1.getName(), found.getName());
   }
   @Test
+  public void testFindByName_WrongFormat() {
+    assertThrows(IllegalArgumentException.class, () -> pl.findByName("Revan"));
+  }
+
+
+  @Test
   public void testClone() {
     Person cloned = pl.clone(person1);
 
